@@ -1,1 +1,14 @@
-# UVG_IA_Lab8
+## Laboratorio 8: Mixture Models
+
+- ¿Cuál implementación fue mejor? ¿Por qué?
+  - En el caso de la diferencia entre nuestra implementación manual de Gaussian Mixture y la de la librería se puede observar muy poca diferencia entre las implementaciones. Esto es muy probable por la cantidad de datos con la que se decidió trabajar y por la distribución que tienen los datos, la cual se encuentra muy cercana a la esquina inferior izquierda y muy juntos entre sí. Esta es tan cercana que incluso, en ambas ocaciones, es difícil de ver cuáles son los datos que le pertenecen a uno de los clústers de datos. La similitud entre las implementaciones puede ser asegurada por medio del puntaje promedio el cual quedó muy similar en ambas ocaciones. Ya que no hay mucha diferencia, se decidió tomar más en cuenta el tiempo de ejecución de cada librería, lo que nos lleva a la conclusión de que se prefiere utilizar la librería de sklearn ya que esta está mucho más optimizada para una gran cantidad de datos.
+
+- ¿Podría PCA ayudarle a mejorar sus clusters? ¿Por qué?
+  - PCA ayuda a reducir la dimensionalidad de los datos, esto permite crear un dataset más manejable y entendible que ayude a que el modelo sea más eficaz y muestre una mejor respuesta. También elimina la redundancia de datos y la correlación entre variables ayudando a que los clústers que se generan tengan una mayor calidad y al momento de graficarlos se puedan distinguir mejor.
+  
+- Provea una métrica de desempeño, justificando su elección
+  - Utilizamos Silhouette score para determinar que tan bien se había desempeñado nuestro modelo. La razón de esto es porque esta métrica permite evaluar la calidad de los clústers generados a partir del modelo y ya que tanto este como el laboratorio pasado trabajaban con ellos consideramos que serían la mejor opción.
+  
+### Comparación con el Laboratorio#7
+- Primero, dados los resultados obtenidos en ambos laboratorios, el modelo que presentó una mejor descripción de los datos fue el de K-Means. Tanto en la implementación con librerías como en la implementación sin librerías los resultados del K-means superaron los 90 puntos en cuanto a métricas como el accuracy y el silhouette score. Mientras que en el modelo implementado en este laboratorio los resultados fueron menos positivos, adquiriendo por ejemplo un resultado del silhouette score menor a 60.
+- Ahora bien, tomando en cuenta todo lo implementado podemos concluir que K-means funciona mejor cuando buscamos separar los datos basándonos en las características que poseen a manera de crear k grupos con datos que sean similares. Mientras que Mixture Models busca encontrar la probabilidad de que dado un dato/punto este pertenezca a uno de los clústers creados y también variar estos mismos en forma y tamaño para encontrar resultados más precisos.
